@@ -3,22 +3,23 @@
 import React from 'react';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
+import Image from 'next/image';
 
 const Logo: React.FC = () => {
   return (
     <Link href="/" className="flex items-center group pt-10">
       <div 
-        className="w-10 h-10 rounded-full flex items-center justify-center mr-3 transition-transform group-hover:scale-105" 
-        style={{ backgroundColor: '#AFE995' }}
+        className="w-20 h-20 rounded-full flex items-center justify-center transition-transform group-hover:scale-105" 
       >
-        <Heart className="w-6 h-6 text-white" />
+        <Image src="/logo2.png" width={2000} height={2000} alt="logo"/>
+
       </div>
-      <div>
+      <div className=''>
         <h1 className="text-xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors">
           みらいメッセージ協会
         </h1>
         <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
-          Future Message Association
+          Mirai Message Association
         </p>
       </div>
     </Link>

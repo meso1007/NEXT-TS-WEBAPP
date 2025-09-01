@@ -2,16 +2,14 @@
 
 import React from 'react';
 import { HeaderProps } from '@/types/header';
-import  { useHeader} from '../hooks/useHeader';
-import Logo from './Header2/Logo';
+import Logo from './Header/Logo';
 
 import Header from './Header/Header';
 
 
 
 
-const Header2: React.FC<HeaderProps> = ({ className = '' }) => {
-  const { isMenuOpen, toggleMenu, closeMenu, navigationItems } = useHeader();
+const HeaderSection: React.FC<HeaderProps> = ({ className = '' }) => {
 
   return (
     <header className={`bg-transparent sticky top-0 z-50 ${className}`}>
@@ -25,4 +23,4 @@ const Header2: React.FC<HeaderProps> = ({ className = '' }) => {
   );
 };
 
-export default Header2;
+export default HeaderSection;

@@ -19,21 +19,19 @@ import {
     Heart,
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
+import { type Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function AboutUsSection() {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLDivElement>(null)
-    const statsRef = useRef<HTMLDivElement>(null)
-    const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
-    const isStatsInView = useInView(statsRef, { once: false, amount: 0.3 })
-
-    // Parallax effect for decorative elements
+    const isInView = useInView(sectionRef, { once: true, amount: 0.1 }); // Changed to `once: true`
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"],
     })
+
 
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -50])
     const y2 = useTransform(scrollYProgress, [0, 1], [0, 50])
@@ -55,15 +53,17 @@ export default function AboutUsSection() {
         },
     }
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
-            transition: { duration: 0.6, ease: "easeOut" },
+            transition: {
+                duration: 0.6,
+                ease: [0.25, 0.1, 0.25, 1.0], // "easeOut"に対応するcubic-bezier配列
+            },
         },
-    }
-
+    };
     const services = [
         {
             icon: <MessageCircle className="w-6 h-6" />,
@@ -123,10 +123,13 @@ export default function AboutUsSection() {
     ]
 
     return (
-        <section
-            id="about-section"
-            ref={sectionRef}
+        <motion.section
+            id="about"
+            ref={sectionRef} // refを追加
             className="w-full py-24 px-4 bg-gradient-to-b from-[#E1F9C9] to-[#F8F8F2] text-[#202e44] overflow-hidden relative"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"} // isInViewの状態に合わせてアニメーション
+            variants={containerVariants}
         >
             {/* Decorative background elements */}
             <motion.div
@@ -181,7 +184,7 @@ export default function AboutUsSection() {
                     </motion.span>
                     <h2 className="text-4xl md:text-5xl font-light mb-4 text-center title">About Us</h2>
                     <motion.div
-                        className="w-24 h-1 bg-[#AFE995]"
+                        className="w-24 h-1 bg-[#91ED54]"
                         initial={{ width: 0 }}
                         animate={{ width: 96 }}
                         transition={{ duration: 1, delay: 0.5 }}
@@ -216,7 +219,7 @@ export default function AboutUsSection() {
 
                     {/* Center Image */}
                     <div className="flex justify-center items-center order-first md:order-none mb-8 md:mb-0">
-                        <motion.div className="relative w-full max-w-xs" variants={itemVariants}>
+                        <motion.div className="relative w-full max-w-xs text-center" variants={itemVariants}>
                             <motion.div
                                 className="rounded-md overflow-hidden"
                                 initial={{ scale: 0.9, opacity: 0 }}
@@ -225,8 +228,9 @@ export default function AboutUsSection() {
                                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                             >
                                 <Link href="/kokomo" className="cursor-pointer z-10">
-                                <Image src="/kokomo.png" width={2000} height={2000} alt="" className="object-cover" />
+                                    <Image src="/kokomo.png" width={2000} height={2000} alt="" className="object-cover" />
                                 </Link>
+                                <h2 className="text-xl title text-[#88734C] font-bold " >KOKOMO <span className="charLogo font-bold"> ココモ</span></h2>
                                 <motion.div
                                     className="absolute inset-0 bg-transparent flex items-end justify-center p-4"
                                     initial={{ opacity: 0 }}
@@ -306,7 +310,7 @@ export default function AboutUsSection() {
                     </div>
                 </div>
             </motion.div>
-        </section>
+        </motion.section>
     )
 }
 
@@ -315,14 +319,11 @@ interface ServiceItemProps {
     secondaryIcon?: React.ReactNode
     title: string
     description: string
-    variants: {
-        hidden: { opacity: number; y?: number }
-        visible: { opacity: number; y?: number; transition: { duration: number; ease: string } }
-    }
+    // ここを修正
+    variants: Variants
     delay: number
     direction: "left" | "right"
 }
-
 function ServiceItem({ icon, secondaryIcon, title, description, variants, delay, direction }: ServiceItemProps) {
     return (
         <motion.div
@@ -367,12 +368,4 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
             </motion.div>
         </motion.div>
     )
-}
-
-interface StatCounterProps {
-    icon: React.ReactNode
-    value: number
-    label: string
-    suffix: string
-    delay: number
 }

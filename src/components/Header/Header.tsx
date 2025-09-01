@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import Button from "./Button/Button";
 import Nav from "./Nav/Nav";
 import styles from "./Header.module.scss";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 type HeaderProps = {
   title: string;
   className?: string;
 };
-
-const variants = {
+const variants: Variants = {
   open: {
     width: 400,
     height: 650,

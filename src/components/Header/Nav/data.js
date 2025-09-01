@@ -1,40 +1,36 @@
 export const Links = [
     {
         title: "Home",
-        href: "/"
+        href: "#home"
     },
     {
-        title: "Features", 
-        href: "/features"
+        title: "about", 
+        href: "#about"
     },
     {
-        title: "Pricing",
-        href: "/price"
+        title: "Service",
+        href: "#otodoke"
     },
     {
         title: "Contact",
-        href: "/contact"
+        href: "#contact"
     },
-    {
-        title: "Login",  // ログインページへのリンク
-        href: "/"
-    }
 ]
 
 
 export const  footerLinks =[
     {
-        title: "Facebook",
-        href: "/"
+        title: "Github",
+        href: "https://github.com/meso1007"
     },
     {
-        title: "Youtube",
-        href: "/"
+        title: "Linkedin",
+        href: "https://www.linkedin.com/in/shoya-horiuchi-83b785278/"
     },    {
-        title: "X",
-        href: "/"
+        title: "youtube",
+        href: "https://x.com/shoya71944104"
     },    {
-        title: "LinkedIn",
-        href: "/"
+        title: "Instagram",
+        href: "https://www.instagram.com/sh02__nmi/"
     },
 ]
