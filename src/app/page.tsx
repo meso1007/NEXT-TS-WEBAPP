@@ -61,7 +61,7 @@ export default function MiraiMessageAssociation() {
             <div className="space-y-8">
               <div>
                 <motion.h1
-                  className="text-8xl title font-bold text-gray-800 mb-4 leading-tight"
+                  className="text-6xl md:text-8xl title font-bold text-gray-800 mb-4 leading-tight"
                   variants={itemVariants}
                 >
                   Mirai<br />
@@ -81,10 +81,14 @@ export default function MiraiMessageAssociation() {
                 variants={itemVariants}
               >
                 <button className="eng px-8 py-4 bg-[#91ED54] rounded-xl border-2 border-[#242424] text-[#242424] font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 hover:bg-[#94E76F] text-xl cursor-pointer">
-                  OTODOKE LIFE
+                  <Link href="https://www.otodokelife.com/">
+                    OTODOKE LIFE
+                  </Link>
                 </button>
                 <button className="px-8 py-4 bg-[#EBEBEE] rounded-xl text-black border-2 border-black font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 hover:bg-[#DEDEE2] text-lg cursor-pointer">
-                  協会について詳しく
+                  <Link href="#about">
+                    協会について詳しく
+                  </Link>
                 </button>
               </motion.div>
             </div>
@@ -95,7 +99,7 @@ export default function MiraiMessageAssociation() {
         <Image src="/connect-1.svg" width={2000} height={2000} alt="" />
       </div>
       <AboutUsSection />
-      
+
       {/* OTODOKE LIFE Section with SectionWrapper */}
       <SectionWrapper
         id="otodoke"
@@ -152,14 +156,14 @@ export default function MiraiMessageAssociation() {
                   </Link>
                 </motion.button>
               </div>
-              <motion.div className="relative border-2 shadow-4" variants={itemVariants}>
+              <motion.div className="relative border-2 shadow-4 rounded-xl overflow-hidden" variants={itemVariants}>
                 <Image alt='otodoke' src="/otodoke.png" width={2000} height={2000} />
               </motion.div>
             </div>
           </div>
         </motion.div>
       </SectionWrapper>
-      
+
       <div>
         <Image src="/connect-2.svg" width={2000} height={2000} alt="" />
       </div>
@@ -210,7 +214,7 @@ export default function MiraiMessageAssociation() {
           </motion.div>
         </div>
       </SectionWrapper>
-      
+
       <div>
         <Image src="/connect-3.svg" width={2000} height={2000} alt="" />
       </div>

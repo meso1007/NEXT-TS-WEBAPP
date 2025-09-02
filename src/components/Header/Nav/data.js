@@ -25,12 +25,12 @@ export const  footerLinks =[
     },
     {
         title: "Linkedin",
-        href: "https://www.linkedin.com/in/shoya-horiuchi-83b785278/"
+        href: "https://www.linkedin.com/in/%E3%81%BF%E3%82%89%E3%81%84%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E5%8D%94%E4%BC%9A-mirai-message-association-39b1ab382/"
     },    {
         title: "youtube",
         href: "https://x.com/shoya71944104"
     },    {
-        title: "Instagram",
-        href: "https://www.instagram.com/sh02__nmi/"
+        title: "otodoke life",
+        href: "https://otodokelife.com/"
     },
 ]

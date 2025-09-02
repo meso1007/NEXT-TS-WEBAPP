@@ -13,7 +13,7 @@ const HeaderSection: React.FC<HeaderProps> = ({ className = '' }) => {
 
   return (
     <header className={`bg-transparent sticky top-0 z-50 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Logo />
           <Header title=''/>
