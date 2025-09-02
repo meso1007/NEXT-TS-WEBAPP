@@ -172,7 +172,7 @@ export default function AboutUsSection() {
                         <Zap className="w-4 h-4" />
                         みらいメッセージ協会について
                     </motion.span>
-                    <h2 className="text-4xl md:text-5xl mb-4 text-center title">About Us</h2>
+                    <h2 className="text-4xl md:text-5xl font-light mb-4 text-center title">ABOUT US</h2>
                     <motion.div
                         className="w-24 h-1 bg-[#91ED54]"
                         initial={{ width: 0 }}

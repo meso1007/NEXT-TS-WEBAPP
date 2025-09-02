@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
               </Link>
             </motion.li>
             <motion.button variants={itemVariants}>
-              <Link href="https://www.otodokelife.com/" className="title text-xl px-8 py-3 rounded-xl border-2 border-black text-black font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 bg-[#91ED54] hover:bg-[#9CDF5A] flex items-center group">
+              <Link href="https://www.otodokelife.com/" className="title text-xl px-8 py-3 rounded-xl border-2 border-black text-black font-light shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 bg-[#91ED54] hover:bg-[#9CDF5A] flex items-center group">
                 OTODOKE Life
               </Link>
             </motion.button>

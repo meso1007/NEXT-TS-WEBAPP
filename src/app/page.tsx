@@ -61,7 +61,7 @@ export default function MiraiMessageAssociation() {
             <div className="space-y-8">
               <div>
                 <motion.h1
-                  className="text-6xl md:text-8xl title font-bold text-gray-800 mb-4 leading-tight"
+                  className="text-6xl md:text-8xl title font-light text-gray-800 mb-4 leading-tight"
                   variants={itemVariants}
                 >
                   MIRAI<br />
@@ -133,7 +133,7 @@ export default function MiraiMessageAssociation() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.h3
-                  className="title2 text-4xl font-bold text-gray-800 mb-6 eng"
+                  className="title2 text-4xl font-light text-gray-800 mb-6 eng"
                   variants={itemVariants}
                 >
                   OTODOKE LIFE

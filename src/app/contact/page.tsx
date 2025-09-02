@@ -223,9 +223,9 @@ export default function ContactPage() {
                             type="submit"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group cursor-pointer relative w-full bg-blue-500 text-white font-medium py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-200 flex items-center justify-center space-x-2"
+                            className="group cursor-pointer text-xl relative w-full bg-blue-500 text-white font-medium py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-200 flex items-center justify-center space-x-2"
                         >
-                            <span className="tracking-wide">GET A SOLUTION</span>
+                            <span className="tracking-wide title font-light">GET A SOLUTION</span>
                             <svg
                                 className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                                 fill="none"
