@@ -1,10 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, {  useRef } from 'react';
 import Link from 'next/link';
 import { motion, useInView, Variants } from 'framer-motion';
-import { Instagram, Linkedin, Github, Youtube, ArrowRight } from 'lucide-react';
+import { Instagram, Linkedin, Github, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
   const footerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.1 });
 
@@ -31,12 +30,6 @@ const Footer: React.FC = () => {
     },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Newsletter subscription:', email);
-    setEmail('');
-  };
-
   return (
     <motion.footer
       ref={footerRef}
@@ -47,7 +40,6 @@ const Footer: React.FC = () => {
     >
       <div className="max-w-4xl mx-auto text-center">
 
-        {/* Logo */}
         <motion.div className="mb-12" variants={itemVariants}>
           <motion.div
             className="w-24 h-24 bg-[#91ED54] rounded-full mx-auto flex items-center justify-center mb-8 cursor-pointer"
@@ -74,12 +66,12 @@ const Footer: React.FC = () => {
               }}
               transition={{ duration: 0.3 }}
             >
-              //
+              {"//"}
             </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* Navigation */}
+
         <motion.nav className="mb-16" variants={containerVariants}>
           <ul className="flex title flex-wrap justify-center items-center gap-8 md:gap-12 text-black">
             <motion.li variants={itemVariants}>
@@ -110,7 +102,6 @@ const Footer: React.FC = () => {
           </ul>
         </motion.nav>
 
-        {/* Social Links */}
         <motion.div className="flex justify-center gap-6 mb-16" variants={containerVariants}>
           <motion.div variants={itemVariants}>
             <Link href="https://www.instagram.com/sh02__nmi/" className="group bg-black hover:bg-white hover:border-2 hover:border-pink-700 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">

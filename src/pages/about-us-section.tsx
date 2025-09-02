@@ -4,27 +4,24 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import {
-    Award,
     Users,
-    Calendar,
     CheckCircle,
     Sparkles,
     Star,
     ArrowRight,
     Zap,
-    TrendingUp,
     MessageCircle,
     ShieldCheck,
     Handshake,
     Heart,
 } from "lucide-react"
-import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { type Variants } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function AboutUsSection() {
-    const [isVisible, setIsVisible] = useState(false)
+    const [, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLDivElement>(null)
     const isInView = useInView(sectionRef, { once: true, amount: 0.1 }); // Changed to `once: true`
     const { scrollYProgress } = useScroll({
@@ -70,7 +67,7 @@ export default function AboutUsSection() {
             secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#A9BBC8]" />,
             title: "もしもの備えを",
             description:
-                "もしもの時に大切なメッセージをQRコードで残し、温かくお届けする非営利サービスです。",
+                "国民全員がもしもの時に備えた準備をすることを目指します。",
             position: "left",
         },
         {
@@ -113,13 +110,6 @@ export default function AboutUsSection() {
                 "自治体やNPO、企業と協力し、サービスを社会の公共財として確立することを目指します。",
             position: "right",
         },
-    ]
-
-    const stats = [
-        { icon: <Award />, value: 150, label: "Projects Completed", suffix: "+" },
-        { icon: <Users />, value: 1200, label: "Happy Clients", suffix: "+" },
-        { icon: <Calendar />, value: 12, label: "Years Experience", suffix: "" },
-        { icon: <TrendingUp />, value: 98, label: "Satisfaction Rate", suffix: "%" },
     ]
 
     return (
@@ -167,7 +157,7 @@ export default function AboutUsSection() {
             />
 
             <motion.div
-                className="container mx-auto max-w-6xl relative z-10"
+                className="container mx-auto max-w-6xl relative z-10 font-bold"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariants}
@@ -182,7 +172,7 @@ export default function AboutUsSection() {
                         <Zap className="w-4 h-4" />
                         みらいメッセージ協会について
                     </motion.span>
-                    <h2 className="text-4xl md:text-5xl font-light mb-4 text-center title">About Us</h2>
+                    <h2 className="text-4xl md:text-5xl mb-4 text-center title">About Us</h2>
                     <motion.div
                         className="w-24 h-1 bg-[#91ED54]"
                         initial={{ width: 0 }}

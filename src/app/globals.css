@@ -43,23 +43,54 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@font-face {
+  font-family: 'customPhosphate';
+  src: url('/fonts/PhosphateRR Solid.ttf') format('truetype');
+  src: url('/fonts/PhosphateInline.woff2') format('woff');
+  src: url('/fonts/PhosphateInline.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'customHiragino';
+  src: url('/fonts/Hiragino Maru.otf') format('opentype');
+  src: url('/fonts/Hiragino Maru2.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'customSubjectivity';
+  src: url('/fonts/Subjectivity-Black.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 body {
-  font-family:"Hiragino Maru Gothic ProN", Arial, Helvetica, sans-serif;
+  font-family:"customHiragino", Arial, Helvetica, sans-serif;
 }
 
 .title {
-  font-family: "Phosphate";
+  font-family: "customPhosphate";
   font-weight: inherit;
+  text-transform: uppercase;
 }
 
 .eng {
-  font-family: "Subjectivity";
-  font-weight: light;
+  font-family: "customSubjectivity";
 }
 
 .title2 {
-  font-family: "Phosphate";
+  font-family: "customPhosphate";
   font-weight: inherit;
+  text-transform: uppercase;
+
 
 }
 
@@ -87,9 +118,6 @@ body {
   z-index: 2; /* 疑似要素より手前に表示 */
 }
 
-.charLogo {
-  font-family: "Hiragino Sans";
-}
 
 :root {
   --radius: 0.625rem;

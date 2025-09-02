@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { motion, useInView, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Sun } from 'lucide-react';
 import SectionWrapper from './section-wrapper';
 
@@ -76,14 +76,19 @@ export default function FounderMessage() {
                         </div>
                     </motion.div>
                     {/* 右側にテキスト */}
-                    <div className="w-full md:w-3/5">
+                    <div className="w-full md:w-3/5 font-bold">
                         <motion.div className="space-y-6" variants={containerVariants}>
                             <motion.p
                                 className="text-xl text-gray-700 leading-relaxed"
                                 variants={itemVariants}
                             >
-                                私たちの目標は、国民全員がもしもの時の準備をし、ご本人もご遺族も心残りを残さない社会を築き上げることです。
+                                私たちの目標は、
+                                <span className="font-bold text-2xl text-orange-600">
+                                    ご本人もご遺族も心残りを残さない社会
+                                </span>
+                                を築き上げることです。
                             </motion.p>
+
                             <motion.p
                                 className="text-xl text-gray-700 leading-relaxed"
                                 variants={itemVariants}

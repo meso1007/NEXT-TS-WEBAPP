@@ -1,12 +1,12 @@
 "use client"
 
 import React from "react"
-import { ArrowRight, Apple, Mail, Zap } from "lucide-react"
+import { ArrowRight, Apple, Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import HeaderSection from "@/components/Header"
 import AboutUsSection from '@/pages/about-us-section'
-import { motion, useScroll, useTransform, Variants } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import Footer from '@/components/Footer/Footer'
 import FounderMessage from '@/pages/founder-section'
 import SectionWrapper from "@/pages/section-wrapper"
@@ -64,9 +64,9 @@ export default function MiraiMessageAssociation() {
                   className="text-6xl md:text-8xl title font-bold text-gray-800 mb-4 leading-tight"
                   variants={itemVariants}
                 >
-                  Mirai<br />
-                  Message<br />
-                  Association<br />
+                  MIRAI<br />
+                  MESSAGE<br />
+                  ASSOCIATION<br />
                 </motion.h1>
                 <motion.p
                   className="text-2xl text-gray-600 mb-2 font-bold"

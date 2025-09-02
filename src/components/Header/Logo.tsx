@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
 import Image from 'next/image';
 
 const Logo: React.FC = () => {
